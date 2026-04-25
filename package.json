@@ -8,6 +8,7 @@
     "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview"
   },
   "dependencies": {
-    "astro": "^5.7.12"
+    "@astrojs/sitemap": "^3.7.2",
+    "astro": "^6.1.9"
   }
 }

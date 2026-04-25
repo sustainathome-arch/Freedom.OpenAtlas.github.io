@@ -1,8 +1,8 @@
 # Open Atlas — site
 
 Rebuild of [openatlas.wiki](https://openatlas.wiki/).
-[Astro](https://docs.astro.build/) wraps the static tree for a standard build and [GitHub Pages](https://docs.astro.build/en/guides/deploy/github/) deploy.
-There is no React/Vue/Svelte UI framework — only static HTML in `public/` and browser ES modules.
+Built as an Astro site with route files in `src/pages/` and static assets/content data in `public/`.
+There is no React/Vue/Svelte UI framework — pages are authored as HTML-first Astro route files plus browser ES modules.
 
 ## Run locally
 
@@ -28,21 +28,9 @@ npm run preview
 ├── astro.config.mjs                 Astro site + GitHub Pages base URL
 ├── package.json
 ├── public/                          copied verbatim to build output
-│   ├── index.html                   home
-│   ├── 404.html                     friendly not-found page
 │   ├── robots.txt
 │   ├── sitemap.xml
 │   ├── CNAME                        GitHub Pages custom domain (openatlas.wiki)
-│   ├── pages/                       every non-home page
-│   │   ├── explore/                 journal index (filterable by tag)
-│   │   ├── pacific-northwest/       PNW + AK destinations directory
-│   │   ├── fj13/                    the rig
-│   │   ├── our-gear/                gear catalog + reviews
-│   │   ├── fuel-the-adventure/      support page
-│   │   ├── contact/                 contact info + form
-│   │   ├── about/                   about the project + pillars + timeline
-│   │   ├── resources/               trip-planning kit + field signals
-│   │   └── journal/<slug>/          one folder per journal entry
 │   └── assets/
 │       ├── css/                     tokens, base, components, pages
 │       ├── js/                      site chrome, components, page inits
@@ -58,36 +46,38 @@ npm run preview
 │       │   ├── travel/              travel-fund supporting photography
 │       │   └── meta/                favicon + social-card assets
 │       └── icons/                   reserved for shared inline SVGs
-└── src/                             Astro scaffolding (no page routes yet)
+└── src/
+    ├── env.d.ts
+    └── pages/                       Astro-native route files
+        ├── index.astro              /
+        ├── 404.astro                /404.html
+        └── pages/*.astro            /pages/... routes
 ```
 
 ## How the site is wired
 
-- Every page loads the same four stylesheets and boots `assets/js/main.js` via a path
-  relative to that HTML file.
-- `main.js` renders the shared **header** and **footer** into `<div data-site-header></div>`
-  and `<div data-site-footer></div>` slots, so you only define the chrome in one
-  place (`public/assets/data/site.js` + `public/assets/js/site.js`). If the site is ever
-  served under a URL prefix, that prefix is derived automatically using `import.meta.url`.
-- If a page sets `<body data-page="home">`, `main.js` dynamically imports
-  `assets/js/pages/home.js` and calls its `init()` function.
-- Reveal-on-scroll is automatic for any element with the `reveal` class.
-  `prefers-reduced-motion` is respected.
+- Every page loads the same four stylesheets and boots `public/assets/js/main.js` via a path relative to that HTML file.
+
+- `main.js` renders the shared **header** and **footer** into `<div data-site-header></div>` and `<div data-site-footer></div>` slots, so you only define the chrome in one place (`public/assets/data/site.js` + `public/assets/js/site.js`). If the site is ever served under a URL prefix, that prefix is derived automatically using `import.meta.url`.
+
+- If a page sets `<body data-page="home">`, `main.js` dynamically imports `public/assets/js/pages/home.js` and calls its `init()` function.
+
+- Reveal-on-scroll is automatic for any element with the `reveal` class `prefers-reduced-motion` is respected.
 
 ## Editing content
 
 ### Nav, brand, footer, tagline
 
-Edit `assets/data/site.js`.
+Edit `public/assets/data/site.js`.
 
 ### Add a journal entry
 
-1. Copy an existing folder under `pages/journal/` (e.g.
-   `pages/journal/yeti-rambler-26oz-review/`).
-2. Rename to your slug (`pages/journal/new-trip/`).
+1. Copy an existing route under `src/pages/pages/journal/` (e.g.
+   `src/pages/pages/journal/yeti-rambler-26oz-review.astro`).
+2. Create your new route as `src/pages/pages/journal/new-trip.astro`.
 3. Update the `<title>`, meta description, breadcrumbs, and body content.
 4. Set `data-slug="new-trip"` on `<body>` (drives the "more posts" list).
-5. Open `assets/data/posts.js` and prepend a new entry:
+5. Open `public/assets/data/posts.js` and prepend a new entry:
 
    ```js
    {
@@ -105,51 +95,51 @@ Edit `assets/data/site.js`.
    }
    ```
 
-6. Drop the cover image into `assets/images/posts/`.
+6. Drop the cover image into `public/assets/images/posts/`.
 
 That's it — the entry now shows up on the home page, on `/pages/explore/`,
 and in the "more posts" row of every existing journal entry.
 
 ### Add a PNW destination
 
-Open `assets/data/destinations.js` and push an entry under the right state.
+Open `public/assets/data/destinations.js` and push an entry under the right state.
 Supported fields: `name`, `region`, `difficulty`, `managedBy`, `note`,
 `planned` (boolean for "future trip" badge), and `post: "<slug>"` to
 auto-link the destination name to a journal entry.
 
 ### Add a gear item
 
-Open `assets/data/gear.js` and push into the right category's `items` array.
+Open `public/assets/data/gear.js` and push into the right category's `items` array.
 Each item supports `brand`, `name`, `image`, `imageAlt`, `blurb`, a
 `details` array (rendered as bullet points), optional `review: "<slug>"`
 (adds a "Read the review" button), and one or more `links`.
 
 If a real photo isn't available, add a custom SVG to
-`assets/images/gear/<slug>.svg` following the pattern already in that
+`public/assets/images/gear/<slug>.svg` following the pattern already in that
 folder (dark background gradient + ember accent geometry). The gear media
 tile automatically switches SVGs to `object-fit: contain` with padding, so
 illustrations read cleanly without cropping.
 
 ### Update FJ13
 
-Everything — specs, gallery, and upgrades — is in `assets/data/fj13.js`.
+Everything — specs, gallery, and upgrades — is in `public/assets/data/fj13.js`.
 
 ### Trip-planning resources
 
-`assets/data/resources.js` exports two arrays: `planningKit` (grouped
+`public/assets/data/resources.js` exports two arrays: `planningKit` (grouped
 planning cards with `title`, `lede`, `items`) and `fieldSignals` (the
 Weather / Cell / Permits / Fire strip reused on Home and Resources). Add
 an entry to either to make it appear everywhere it's used.
 
 ### Pillars and stats
 
-`assets/data/site.js` also exports `pillars` (four editorial principles
+`public/assets/data/site.js` also exports `pillars` (four editorial principles
 rendered on Home and About) and `stats` (the "By the numbers" strip).
 Update the copy or reorder the array and both pages follow automatically.
 
 ## Design system
 
-All design tokens are in `assets/css/tokens.css`:
+All design tokens are in `public/assets/css/tokens.css`:
 
 - Surfaces: `--bg-base`, `--bg-surface`, `--bg-elevated`
 - Text: `--text-primary`, `--text-secondary`, `--text-muted`

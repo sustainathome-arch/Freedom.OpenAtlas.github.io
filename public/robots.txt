@@ -1,9 +1,4 @@
 User-agent: *
 Allow: /
 
-# The admin dashboard is a private back-office CMS and must never be
-# surfaced by search engines or answer engines.
-Disallow: /admin-dash/
-Disallow: /admin-dash/*
-
 Sitemap: https://openatlas.wiki/sitemap.xml
