@@ -1,4 +1,4 @@
-import { posts } from "../../data/posts.js";
+import { posts } from "/data/posts.js";
 import { renderPostGrid } from "../components.js";
 import { withBase } from "../site.js";
 import { initReveal } from "../motion.js";

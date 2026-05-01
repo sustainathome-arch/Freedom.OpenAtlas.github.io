@@ -1,7 +1,7 @@
-import { site } from "../../data/site.js";
-import { latestPosts } from "../../data/posts.js";
-import { destinationsByState } from "../../data/destinations.js";
-import { fieldSignals } from "../../data/resources.js";
+import { site } from "/data/site.js";
+import { latestPosts } from "/data/posts.js";
+import { destinationsByState } from "/data/destinations.js";
+import { fieldSignals } from "/data/resources.js";
 import {
   renderPostGrid,
   renderStats,

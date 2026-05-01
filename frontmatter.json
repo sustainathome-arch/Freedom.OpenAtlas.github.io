@@ -1,0 +1,209 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.framework.id": "astro",
+  "frontMatter.preview.host": "http://localhost:4321",
+  "frontMatter.content.publicFolder": "public",
+  "frontMatter.content.mediaFolder": "assets/images",
+  "frontMatter.content.pages": "src/pages",
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "Home",
+      "path": "[[workspace]]/src/pages",
+      "file": "index.astro"
+    },
+    {
+      "title": "Journal Posts",
+      "path": "[[workspace]]/src/content/journal",
+      "file": null
+    },
+    {
+      "title": "Data Files",
+      "path": "[[workspace]]/public/data",
+      "file": null
+    }
+  ],
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "Home Page",
+      "file": "index.astro",
+      "pageBundle": false,
+      "previewPath": "",
+      "filePrefix": null,
+      "clearEmpty": true,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Hero Image",
+          "name": "heroImage",
+          "type": "image",
+          "isPreviewImage": true
+        },
+        {
+          "title": "Og Title",
+          "name": "ogTitle",
+          "type": "string"
+        },
+        {
+          "title": "Og Description",
+          "name": "ogDescription",
+          "type": "string"
+        },
+        {
+          "title": "Og Image",
+          "name": "ogImage",
+          "type": "image"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "delta"
+        }
+      ]
+    },
+    {
+      "name": "Site Page",
+      "pageBundle": false,
+      "previewPath": "pages",
+      "filePrefix": null,
+      "clearEmpty": true,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Hero Image",
+          "name": "heroImage",
+          "type": "image",
+          "isPreviewImage": true
+        },
+        {
+          "title": "Og Title",
+          "name": "ogTitle",
+          "type": "string"
+        },
+        {
+          "title": "Og Description",
+          "name": "ogDescription",
+          "type": "string"
+        },
+        {
+          "title": "Og Image",
+          "name": "ogImage",
+          "type": "image"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "delta"
+        }
+      ]
+    },
+    {
+      "name": "Journal Post",
+      "pageBundle": false,
+      "previewPath": "pages/journal",
+      "filePrefix": null,
+      "clearEmpty": true,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "pubDate",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Hero Image",
+          "name": "heroImage",
+          "type": "image",
+          "isPreviewImage": true
+        },
+        {
+          "title": "Author",
+          "name": "author",
+          "type": "string"
+        },
+        {
+          "title": "Category",
+          "name": "category",
+          "type": "category"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "delta"
+        },
+        {
+          "title": "Read Time (minutes)",
+          "name": "readMinutes",
+          "type": "number"
+        },
+        {
+          "title": "Og Title",
+          "name": "ogTitle",
+          "type": "string"
+        },
+        {
+          "title": "Og Description",
+          "name": "ogDescription",
+          "type": "string"
+        },
+        {
+          "title": "Og Image",
+          "name": "ogImage",
+          "type": "image"
+        }
+      ]
+    },
+    {
+      "name": "404 Page",
+      "file": "404.astro",
+      "pageBundle": false,
+      "previewPath": "",
+      "filePrefix": null,
+      "clearEmpty": true,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string",
+          "single": true
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        }
+      ]
+    }
+  ]
+}

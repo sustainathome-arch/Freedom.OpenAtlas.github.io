@@ -1,7 +1,7 @@
 import {
   planningKit,
   fieldSignals,
-} from "../../data/resources.js";
+} from "/data/resources.js";
 import {
   renderPlanningGroup,
   renderFieldSignals,

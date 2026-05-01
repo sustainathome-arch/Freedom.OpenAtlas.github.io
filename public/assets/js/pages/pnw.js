@@ -1,5 +1,5 @@
-import { destinationsByState } from "../../data/destinations.js";
-import { posts } from "../../data/posts.js";
+import { destinationsByState } from "/data/destinations.js";
+import { posts } from "/data/posts.js";
 import { renderDestinationsByState, postLookup } from "../components.js";
 import { initReveal } from "../motion.js";
 

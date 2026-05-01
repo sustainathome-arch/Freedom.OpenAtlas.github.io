@@ -1,4 +1,4 @@
-import { fj13 } from "../../data/fj13.js";
+import { fj13 } from "/data/fj13.js";
 import { esc, html } from "../site.js";
 import { renderPhotoRow } from "../components.js";
 import { initReveal } from "../motion.js";

@@ -7,19 +7,19 @@ export const site = {
     "Practical field notes, honest gear reviews, and real stories from the backroads of the Pacific Northwest, with FJ13 taking us there.",
   copyrightHolder: "Open Atlas",
   copyrightYear: 2026,
-nav: [
-  { label: "Explore", href: "/pages/explore/" },
-  { label: "About", href: "/pages/about/" },
-  { label: "Pacific Northwest", href: "/pages/pacific-northwest/" },
-  { label: "Our Gear", href: "/pages/our-gear/" },
-  { label: "Library", href: "/pages/library/" },
-  { label: "FJ13", href: "/pages/fj13/" },
-  {
-    label: "Fuel the Adventure",
-    href: "/pages/fuel-the-adventure/",
-    cta: true,
-  },
-],
+  nav: [
+    { label: "Explore", href: "/pages/explore/" },
+    { label: "About", href: "/pages/about/" },
+    { label: "Pacific Northwest", href: "/pages/pacific-northwest/" },
+    { label: "Our Gear", href: "/pages/our-gear/" },
+    { label: "Library", href: "/pages/library/" },
+    { label: "FJ13", href: "/pages/fj13/" },
+    {
+      label: "Fuel the Adventure",
+      href: "/pages/fuel-the-adventure/",
+      cta: true,
+    },
+  ],
   footerColumns: [
     {
       title: "Adventures",
@@ -50,13 +50,13 @@ nav: [
     {
       title: "Destinations that matter",
       body:
-        "Waterfalls, lava tubes, forest roads, and the quiet corners most maps gloss over. Our destinations are curated based on each of their unique qualities. You won’t find any hyped up rants or raves about that side of the road tourist attraction.",
+        "Waterfalls, lava tubes, forest roads, and the quiet corners most maps gloss over. Our destinations are curated based on each of their unique qualities. You won't find any hyped up rants or raves about that side of the road tourist attraction.",
       icon: "map",
     },
     {
       title: "Gear we actually use",
       body:
-        "Our gear reviews are informed by miles of trail, mud, condensation, and the occasional river dunk. We can’t give you a true review until we try to break something or have to recover our favorite water container from the banks of the Rogue Gorge.",
+        "Our gear reviews are informed by miles of trail, mud, condensation, and the occasional river dunk. We can't give you a true review until we try to break something or have to recover our favorite water container from the banks of the Rogue Gorge.",
       icon: "compass",
     },
     {
@@ -68,7 +68,7 @@ nav: [
     {
       title: "Leave it better",
       body:
-        "We travel on public roadways and explore the best that our public lands have to offer. That means tread lightly, respect the access we have been granted, and pack it out, even if we didn’t bring it in. The forests, rivers, trails, and caves belong to us all. We lead by example to keep these places ready to awe the next visitor just as much as it did for us.",
+        "We travel on public roadways and explore the best that our public lands have to offer. That means tread lightly, respect the access we have been granted, and pack it out, even if we didn't bring it in. The forests, rivers, trails, and caves belong to us all. We lead by example to keep these places ready to awe the next visitor just as much as it did for us.",
       icon: "leaf",
     },
   ],

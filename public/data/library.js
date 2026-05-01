@@ -13,7 +13,7 @@ export const libraryCategories = [
         author: "Adam Sawyer",
         name: "HIKING WATERFALLS Oregon: A Guide to the State's Best Waterfall Hikes",
         publisher: "Falcon Guides",
-        image: "/assets/images/library/hiking-waterfalls-oregon.jpg",
+        image: "/assets/images/library/placeholder.svg",
         imageAlt: "Hiking Waterfalls Oregon book cover.",
         blurb: "The definitive guide to Oregon's waterfalls. Every hike rated for difficulty and scenery.",
         details: [
@@ -27,7 +27,7 @@ export const libraryCategories = [
         author: "Stan Tekiela",
         name: "Birds of Prey of the West: Field Guide",
         publisher: "Adventure Press",
-        image: "/assets/images/library/birds-of-prey-west.jpg",
+        image: "/assets/images/library/placeholder.svg",
         imageAlt: "Birds of Prey of the West field guide cover.",
         blurb: "Comprehensive guide to raptors of the American West.",
         details: [
@@ -41,7 +41,7 @@ export const libraryCategories = [
         author: "National Audubon Society",
         name: "National Audubon Society Field Guide to Rocks and Minerals: North America",
         publisher: "Alfred A. Knopf",
-        image: "/assets/images/library/guide-rocks-minerals.jpg",
+        image: "/assets/images/library/placeholder.svg",
         imageAlt: "Rocks and Minerals field guide cover.",
         blurb: "The essential guide to identifying rocks and minerals across North America.",
         details: [
@@ -55,7 +55,7 @@ export const libraryCategories = [
         author: "National Audubon Society",
         name: "National Audubon Society Field Guide to North American Wildflowers: Western Region",
         publisher: "Alfred A. Knopf",
-        image: "/assets/images/library/guide-wildflowers.jpg",
+        image: "/assets/images/library/placeholder.svg",
         imageAlt: "Wildflowers field guide cover.",
         blurb: "Identify wildflowers from the Rockies to the Pacific.",
         details: [
@@ -69,7 +69,7 @@ export const libraryCategories = [
         author: "National Audubon Society",
         name: "National Audubon Society Field Guide to North American Mushrooms",
         publisher: "Alfred A. Knopf",
-        image: "/assets/images/library/guide-mushrooms.jpg",
+        image: "/assets/images/library/placeholder.svg",
         imageAlt: "Mushrooms field guide cover.",
         blurb: "Identify mushrooms with this comprehensive field guide.",
         details: [
@@ -83,7 +83,7 @@ export const libraryCategories = [
         author: "Elbert L. Little",
         name: "National Audubon Society Field Guide to North American Trees: Western Region",
         publisher: "Alfred A. Knopf",
-        image: "/assets/images/library/guide-trees.jpg",
+        image: "/assets/images/library/placeholder.svg",
         imageAlt: "Trees field guide cover.",
         blurb: "The definitive guide to identifying trees in the West.",
         details: [
@@ -97,7 +97,7 @@ export const libraryCategories = [
         author: "Ellen Morris Bishop",
         name: "In Search of Ancient Oregon: A Geological and Natural History",
         publisher: "Oregon State University Press",
-        image: "/assets/images/library/ancient-oregon.jpg",
+        image: "/assets/images/library/placeholder.svg",
         imageAlt: "In Search of Ancient Oregon book cover.",
         blurb: "Explore Oregon's fascinating geological history.",
         details: [
@@ -111,7 +111,7 @@ export const libraryCategories = [
         author: "Gregory A. Plumb",
         name: "Waterfall Lover's Guide Pacific Northwest",
         publisher: "The Wilderness Press",
-        image: "/assets/images/library/waterfall-lovers-guide.jpg",
+        image: "/assets/images/library/placeholder.svg",
         imageAlt: "Waterfall Lover's Guide cover.",
         blurb: "Discover the hidden waterfalls of the Pacific Northwest.",
         details: [
@@ -125,7 +125,7 @@ export const libraryCategories = [
         author: "Jon L. Dunn & Jonathan Alderfer",
         name: "National Geographic Field Guide to the Birds of North America, Fifth Edition",
         publisher: "National Geographic",
-        image: "/assets/images/library/guide-birds.jpg",
+        image: "/assets/images/library/placeholder.svg",
         imageAlt: "National Geographic Birds field guide cover.",
         blurb: "The most comprehensive bird field guide available.",
         details: [
@@ -135,65 +135,6 @@ export const libraryCategories = [
         ],
         links: [{ label: "Buy on Amazon", href: "https://amzn.to/4eEQZcz" }]
       },
-      // === PLACEHOLDERS - Fill in as you go ===
-      /*
-      {
-        author: "TODO: Author",
-        name: "TODO: Book Title",
-        publisher: "TODO: Publisher",
-        image: "/assets/images/library/placeholder.jpg",
-        imageAlt: "TODO: Add cover image",
-        blurb: "TODO: Add description",
-        details: [
-          "TODO: Add detail 1",
-          "TODO: Add detail 2",
-          "TODO: Add detail 3"
-        ],
-        links: [{ label: "TODO: Add link", href: "#" }]
-      },
-      {
-        author: "TODO: Author",
-        name: "TODO: Book Title",
-        publisher: "TODO: Publisher",
-        image: "/assets/images/library/placeholder.jpg",
-        imageAlt: "TODO: Add cover image",
-        blurb: "TODO: Add description",
-        details: [
-          "TODO: Add detail 1",
-          "TODO: Add detail 2",
-          "TODO: Add detail 3"
-        ],
-        links: [{ label: "TODO: Add link", href: "#" }]
-      },
-      {
-        author: "TODO: Author",
-        name: "TODO: Book Title",
-        publisher: "TODO: Publisher",
-        image: "/assets/images/library/placeholder.jpg",
-        imageAlt: "TODO: Add cover image",
-        blurb: "TODO: Add description",
-        details: [
-          "TODO: Add detail 1",
-          "TODO: Add detail 2",
-          "TODO: Add detail 3"
-        ],
-        links: [{ label: "TODO: Add link", href: "#" }]
-      },
-      {
-        author: "TODO: Author",
-        name: "TODO: Book Title",
-        publisher: "TODO: Publisher",
-        image: "/assets/images/library/placeholder.jpg",
-        imageAlt: "TODO: Add cover image",
-        blurb: "TODO: Add description",
-        details: [
-          "TODO: Add detail 1",
-          "TODO: Add detail 2",
-          "TODO: Add detail 3"
-        ],
-        links: [{ label: "TODO: Add link", href: "#" }]
-      }
-      */
     ],
   },
 ];

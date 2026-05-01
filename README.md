@@ -1,7 +1,7 @@
 # Open Atlas — site
 
 Rebuild of [openatlas.wiki](https://openatlas.wiki/).
-Built as an Astro site with route files in `src/pages/` and static assets/content data in `public/`.
+Built as an Astro site with route files in `src/pages/pages/` and static assets/content data in `public/`.
 There is no React/Vue/Svelte UI framework — pages are authored as HTML-first Astro route files plus browser ES modules.
 
 ## Run locally
@@ -51,7 +51,7 @@ npm run preview
     └── pages/                       Astro-native route files
         ├── index.astro              /
         ├── 404.astro                /404.html
-        └── pages/*.astro            /pages/... routes
+        └── pages/*.astro            /pages/pages/... routes
 ```
 
 ## How the site is wired
@@ -60,7 +60,7 @@ npm run preview
 
 - `main.js` renders the shared **header** and **footer** into `<div data-site-header></div>` and `<div data-site-footer></div>` slots, so you only define the chrome in one place (`public/assets/data/site.js` + `public/assets/js/site.js`). If the site is ever served under a URL prefix, that prefix is derived automatically using `import.meta.url`.
 
-- If a page sets `<body data-page="home">`, `main.js` dynamically imports `public/assets/js/pages/home.js` and calls its `init()` function.
+- If a page sets `<body data-page="home">`, `main.js` dynamically imports `public/assets/js/pages/pages/home.js` and calls its `init()` function.
 
 - Reveal-on-scroll is automatic for any element with the `reveal` class `prefers-reduced-motion` is respected.
 
@@ -91,13 +91,13 @@ Edit `public/assets/data/site.js`.
      readMinutes: 7,
      image: "/assets/images/posts/new-trip-hero.jpg",
      imageAlt: "Describe the image.",
-     url: "/pages/journal/new-trip/",
+     url: "/pages/pages/journal/new-trip/",
    }
    ```
 
 6. Drop the cover image into `public/assets/images/posts/`.
 
-That's it — the entry now shows up on the home page, on `/pages/explore/`,
+That's it — the entry now shows up on the home page, on `/pages/pages/explore/`,
 and in the "more posts" row of every existing journal entry.
 
 ### Add a PNW destination

@@ -1,4 +1,4 @@
-import { posts, getOtherPosts } from "../../data/posts.js";
+import { posts, getOtherPosts } from "/data/posts.js";
 import { renderMorePosts } from "../components.js";
 import { initReveal } from "../motion.js";
 

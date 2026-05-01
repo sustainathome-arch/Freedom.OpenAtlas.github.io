@@ -1,5 +1,15 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "compilerOptions": {
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "target": "ES2020",
+    "types": ["astro/client"]
+  },
+  "include": [".astro/types.d.ts", "src/**/*.ts", "src/**/*.astro", "src/**/*.d.ts"],
+  "exclude": ["dist", "node_modules"]
 }

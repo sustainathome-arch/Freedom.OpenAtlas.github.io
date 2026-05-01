@@ -1,5 +1,5 @@
-import { libraryCategories } from "../../data/library.js";
-import { posts } from "../../data/posts.js";
+import { libraryCategories } from "/data/library.js";
+import { posts } from "/data/posts.js";
 import { postLookup } from "../components.js";
 import { esc, html } from "../site.js";
 import { initReveal } from "../motion.js";

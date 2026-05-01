@@ -1,4 +1,4 @@
-// Trip-planning resources. Rendered on /pages/resources/.
+// Trip-planning resources. Rendered on /pages/pages/resources/.
 // Each card explains a practical piece of trip planning that visitors can
 // act on before they head out. Keep the voice honest and specific.
 

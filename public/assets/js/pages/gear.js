@@ -1,5 +1,5 @@
-import { gearCategories } from "../../data/gear.js";
-import { posts } from "../../data/posts.js";
+import { gearCategories } from "/data/gear.js";
+import { posts } from "/data/posts.js";
 import { renderGearItem, postLookup } from "../components.js";
 import { esc, html } from "../site.js";
 import { initReveal } from "../motion.js";

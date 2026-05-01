@@ -1,118 +1,154 @@
-<!DOCTYPE html>
+---
+title: "Trip Planning Resources — Open Atlas";
+description: "Route tools, a field-tested packing list, PNW seasons, and trail ethics.";
+heroImage: "assets/images/destinations/forest-trail.jpg";
+ogTitle: "Trip Planning Resources — Open Atlas";
+ogDescription: "Planning checklists, trail ethics, and the apps we actually open before every trip.";
+ogImage: "assets/images/destinations/forest-trail.jpg";
+tags: ["resources", "site"];
+---
+
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Trip Planning Resources — Open Atlas</title>
-  <meta name="description" content="Route tools, a field-tested packing list, PNW seasons, and trail ethics. The checklists we actually run before and during every trip." />
-  <meta name="theme-color" content="#0b0d0e" />
-  <link rel="icon" href="../../assets/images/meta/favicon.svg" type="image/svg+xml" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Trip Planning Resources — Open Atlas</title>
+    <meta
+      name="description"
+      content="Route tools, a field-tested packing list, PNW seasons, and trail ethics. The checklists we actually run before and during every trip."
+    />
+    <meta name="theme-color" content="#0b0d0e" />
+    <link rel="icon" href="../../assets/images/meta/favicon.svg" type="image/svg+xml" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="../../assets/css/tokens.css" />
-  <link rel="stylesheet" href="../../assets/css/base.css" />
-  <link rel="stylesheet" href="../../assets/css/components.css" />
-  <link rel="stylesheet" href="../../assets/css/pages.css" />
+    <link rel="stylesheet" href="../../assets/css/tokens.css" />
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/components.css" />
+    <link rel="stylesheet" href="../../assets/css/pages.css" />
 
-  <meta property="og:title" content="Trip Planning Resources — Open Atlas" />
-  <meta property="og:description" content="Planning checklists, trail ethics, and the apps we actually open before every trip." />
-  <meta property="og:image" content="https://openatlas.wiki/assets/images/destinations/forest-trail.jpg" />
-</head>
-<body data-page="resources">
-  <div data-site-header></div>
+    <meta property="og:title" content="Trip Planning Resources — Open Atlas" />
+    <meta
+      property="og:description"
+      content="Planning checklists, trail ethics, and the apps we actually open before every trip."
+    />
+    <meta
+      property="og:image"
+      content="https://openatlas.wiki/assets/images/destinations/forest-trail.jpg"
+    />
+  </head>
+  <body data-page="resources">
+    <div data-site-header></div>
 
-  <main id="main">
-    <section class="hero hero--short">
-      <div class="hero__media">
-        <img src="../../assets/images/destinations/forest-trail.jpg" alt="A forested trail in the Pacific Northwest, light filtering through trees." />
-      </div>
-      <div class="container hero__content">
-        <nav aria-label="Breadcrumb">
-          <ol class="breadcrumbs">
-            <li><a href="../../">Home</a></li>
-            <li>Resources</li>
-          </ol>
-        </nav>
-        <span class="hero__eyebrow">Trip planning</span>
-        <h1 class="hero__title">Plan the trip.<br />Then run it.</h1>
-        <p class="hero__sub">
-          Route tools, a pack list that earned its keep, a seasonal calendar
-          for the PNW, and the Leave No Trace principles — written the way
-          we use them, not the way they read in a brochure.
-        </p>
-      </div>
-    </section>
-
-    <!-- Field signals -->
-    <section class="section section--tight">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Before you leave</span>
-          <h2 class="section-heading__title">The four checks we never skip.</h2>
+    <main id="main">
+      <section class="hero hero--short">
+        <div class="hero__media">
+          <img
+            src="../../assets/images/destinations/forest-trail.jpg"
+            alt="A forested trail in the Pacific Northwest, light filtering through trees."
+          />
         </div>
-        <div class="signal-strip reveal" data-field-signals></div>
-      </div>
-    </section>
-
-    <!-- Planning kit with sticky TOC -->
-    <section class="section">
-      <div class="container">
-        <div class="resources-layout">
-          <aside class="toc reveal" aria-label="Planning sections">
-            <div class="toc__title">Jump to</div>
-            <div data-planning-toc></div>
-          </aside>
-
-          <div class="planning-stack reveal" data-planning></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Permits & fees -->
-    <section class="section section--tight">
-      <div class="container">
-        <div class="callout callout--info reveal">
-          <h3 style="margin-top:0;">Permits, passes, and public-land basics</h3>
-          <p>
-            Most of our trips run on one of a small stack of passes. If you
-            only buy one thing for a year on public land, make it the
-            <strong>America the Beautiful</strong> pass — it covers NPS, USFS
-            fee day-use sites, BLM, and most of the Fish & Wildlife refuges.
-          </p>
-          <ul>
-            <li><strong>America the Beautiful</strong> — $80/year, covers federal lands nationwide.</li>
-            <li><strong>Northwest Forest Pass</strong> — $30/year, covers USFS sites in OR + WA. Redundant if you have AtB.</li>
-            <li><strong>Oregon State Parks Day-Use</strong> — needed at a handful of coast + central OR state parks.</li>
-            <li><strong>Timed entry</strong> — check Mt. Rainier, Crater Lake rim drive, and some NF trailheads in summer.</li>
-          </ul>
-          <p class="text-secondary" style="margin-bottom:0;">
-            If the destination page on this site links to the managing agency,
-            tap through before you go — permit rules change by season.
+        <div class="container hero__content">
+          <nav aria-label="Breadcrumb">
+            <ol class="breadcrumbs">
+              <li><a href="../../">Home</a></li>
+              <li>Resources</li>
+            </ol>
+          </nav>
+          <span class="hero__eyebrow">Trip planning</span>
+          <h1 class="hero__title">Plan the trip.<br />Then run it.</h1>
+          <p class="hero__sub">
+            Route tools, a pack list that earned its keep, a seasonal calendar for the PNW, and the
+            Leave No Trace principles — written the way we use them, not the way they read in a
+            brochure.
           </p>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Closing CTA -->
-    <section class="section section--tight">
-      <div class="container">
-        <div class="callout reveal" style="text-align:center;">
-          <p class="quote-block" style="margin:0; font-size: var(--fs-xl);">
-            Plan carefully. Travel lightly. Leave it better than you found it.
-          </p>
-          <div class="row" style="justify-content:center; margin-top: var(--sp-3);">
-            <a class="btn" href="../pacific-northwest/">Open the directory</a>
-            <a class="btn btn--ghost" href="../our-gear/">See the gear list</a>
+      <!-- Field signals -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Before you leave</span>
+            <h2 class="section-heading__title">The four checks we never skip.</h2>
+          </div>
+          <div class="signal-strip reveal" data-field-signals></div>
+        </div>
+      </section>
+
+      <!-- Planning kit with sticky TOC -->
+      <section class="section">
+        <div class="container">
+          <div class="resources-layout">
+            <aside class="toc reveal" aria-label="Planning sections">
+              <div class="toc__title">Jump to</div>
+              <div data-planning-toc></div>
+            </aside>
+
+            <div class="planning-stack reveal" data-planning></div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <div data-site-footer></div>
-  <script type="module" src="../../assets/js/main.js"></script>
-</body>
+      <!-- Permits & fees -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="callout callout--info reveal">
+            <h3 style="margin-top:0;">Permits, passes, and public-land basics</h3>
+            <p>
+              Most of our trips run on one of a small stack of passes. If you only buy one thing for
+              a year on public land, make it the
+              <strong>America the Beautiful</strong> pass — it covers NPS, USFS fee day-use sites, BLM,
+              and most of the Fish & Wildlife refuges.
+            </p>
+            <ul>
+              <li>
+                <strong>America the Beautiful</strong> — $80/year, covers federal lands nationwide.
+              </li>
+              <li>
+                <strong>Northwest Forest Pass</strong> — $30/year, covers USFS sites in OR + WA. Redundant
+                if you have AtB.
+              </li>
+              <li>
+                <strong>Oregon State Parks Day-Use</strong> — needed at a handful of coast + central OR
+                state parks.
+              </li>
+              <li>
+                <strong>Timed entry</strong> — check Mt. Rainier, Crater Lake rim drive, and some NF trailheads
+                in summer.
+              </li>
+            </ul>
+            <p class="text-secondary" style="margin-bottom:0;">
+              If the destination page on this site links to the managing agency, tap through before
+              you go — permit rules change by season.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Closing CTA -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="callout reveal" style="text-align:center;">
+            <p class="quote-block" style="margin:0; font-size: var(--fs-xl);">
+              Plan carefully. Travel lightly. Leave it better than you found it.
+            </p>
+            <div class="row" style="justify-content:center; margin-top: var(--sp-3);">
+              <a class="btn" href="../pacific-northwest/">Open the directory</a>
+              <a class="btn btn--ghost" href="../our-gear/">See the gear list</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div data-site-footer></div>
+    <script type="module" src="../../assets/js/main.js"></script>
+  </body>
 </html>

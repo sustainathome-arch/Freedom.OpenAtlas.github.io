@@ -243,7 +243,7 @@ export function renderRegionRail(slot, groups) {
     .map(
       (g) => html`
         <a class="region-card" href="${esc(
-          withBase("/pages/pacific-northwest/") + `#${g.state.toLowerCase()}`,
+          withBase("/pages/pages/pacific-northwest/") + `#${g.state.toLowerCase()}`,
         )}">
           <div class="region-card__head">
             <h3>${esc(g.state)}</h3>

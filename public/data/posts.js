@@ -1,7 +1,7 @@
 // Journal entries. To add a new post:
-//   1. Create `new-site/pages/journal/<slug>/index.html` (use an existing post as a template).
+//   1. Create `src/content/journal/<slug>.md` (use an existing post as a template).
 //   2. Append a new entry to this array with the same `slug`.
-//   3. Drop a cover image into `new-site/assets/images/posts/`.
+//   3. Drop a cover image into `assets/images/posts/`.
 
 export const posts = [
   {

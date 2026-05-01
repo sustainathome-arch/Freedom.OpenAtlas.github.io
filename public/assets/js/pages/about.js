@@ -1,4 +1,4 @@
-import { site } from "../../data/site.js";
+import { site } from "/data/site.js";
 import { renderPillars, renderStats } from "../components.js";
 import { initReveal } from "../motion.js";
 

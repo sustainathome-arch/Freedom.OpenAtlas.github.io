@@ -5,10 +5,27 @@
   "scripts": {
     "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
     "build": "ASTRO_TELEMETRY_DISABLED=1 astro build && test -f public/.nojekyll && cp public/.nojekyll dist/.nojekyll || true",
-    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview"
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "check": "astro check",
+    "check:ts": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"src/**/*.{ts,js,astro,css,md}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,js,astro,css,md}\""
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.2",
     "astro": "^6.1.9"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "@typescript-eslint/eslint-plugin": "^8.59.1",
+    "@typescript-eslint/parser": "^8.59.1",
+    "astro-eslint-parser": "^1.4.0",
+    "eslint": "^10.2.1",
+    "eslint-plugin-astro": "^1.7.0",
+    "prettier": "^3.8.3",
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.9.3"
   }
 }

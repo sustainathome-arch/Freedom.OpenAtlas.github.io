@@ -1,226 +1,280 @@
-<!DOCTYPE html>
+---
+title: "Open Atlas — The road is calling";
+description: "Open Atlas is a field journal from overlanding in the Pacific Northwest. Stories, gear, and the FJ Cruiser that gets us there.";
+heroImage: "assets/images/hero/site-hero.jpg";
+ogTitle: "Open Atlas — The road is calling";
+ogDescription: "Honest, field-tested stories from overlanding the Pacific Northwest, built around our Toyota FJ Cruiser.";
+ogImage: "assets/images/hero/site-hero.jpg";
+tags: ["home", "about"];
+---
+
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Open Atlas — The road is calling</title>
-  <meta name="description" content="Open Atlas is a field journal from overlanding in the Pacific Northwest. Stories, gear, and the FJ Cruiser that gets us there." />
-  <meta name="theme-color" content="#0b0d0e" />
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Open Atlas — The road is calling</title>
+    <meta
+      name="description"
+      content="Open Atlas is a field journal from overlanding in the Pacific Northwest. Stories, gear, and the FJ Cruiser that gets us there."
+    />
+    <meta name="theme-color" content="#0b0d0e" />
 
-  <link rel="icon" href="assets/images/meta/favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="icon" href="assets/images/meta/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="stylesheet" href="assets/css/tokens.css" />
-  <link rel="stylesheet" href="assets/css/base.css" />
-  <link rel="stylesheet" href="assets/css/components.css" />
-  <link rel="stylesheet" href="assets/css/pages.css" />
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/components.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
 
-  <meta property="og:title" content="Open Atlas — The road is calling" />
-  <meta property="og:description" content="Honest, field-tested stories from overlanding the Pacific Northwest, built around our Toyota FJ Cruiser." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="https://openatlas.wiki/assets/images/hero/site-hero.jpg" />
-</head>
-<body data-page="home">
-  <div data-site-header></div>
+    <meta property="og:title" content="Open Atlas — The road is calling" />
+    <meta
+      property="og:description"
+      content="Honest, field-tested stories from overlanding the Pacific Northwest, built around our Toyota FJ Cruiser."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://openatlas.wiki/assets/images/hero/site-hero.jpg" />
+  </head>
+  <body data-page="home">
+    <div data-site-header></div>
 
-  <main id="main">
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero__media">
-        <img src="assets/images/hero/site-hero.jpg" alt="A forested Pacific Northwest ridgeline at dusk." />
-      </div>
-      <div class="container hero__content">
-        <span class="hero__eyebrow">Field journal · est. 2026</span>
-        <h1 class="hero__title">The road is calling.</h1>
-        <p class="hero__sub">
-          From volcanic ridgelines and rushing rivers to deep forests, high-desert
-          trails, and the wild edges of national parks — Open Atlas is built to
-          share the journey and the work that makes it possible.
-        </p>
-        <div class="hero__actions">
-          <a class="btn btn--lg" href="pages/explore/">
-            Start exploring
-            <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-              <path d="M5 12h14" /><path d="M13 5l7 7-7 7" />
-            </svg>
-          </a>
-          <a class="btn btn--ghost btn--lg" href="pages/fuel-the-adventure/">Fuel the adventure</a>
+    <main id="main">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero__media">
+          <img
+            src="assets/images/hero/site-hero.jpg"
+            alt="A forested Pacific Northwest ridgeline at dusk."
+          />
         </div>
-        <dl class="home-hero__meta">
-          <div><dt>Home base</dt><dd>Pacific Northwest</dd></div>
-          <div><dt>Rig</dt><dd>Toyota FJ13</dd></div>
-          <div><dt>Focus</dt><dd>Overlanding · Hiking · Caving</dd></div>
-        </dl>
-      </div>
-    </section>
-
-    <!-- Field signals strip -->
-    <section class="section section--tight">
-      <div class="container">
-        <div class="section-heading reveal" style="display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:var(--sp-2); max-width:none;">
-          <div>
-            <span class="eyebrow">Trip-day check</span>
-            <h2 class="section-heading__title" style="margin-top:0;">Before the engine turns over.</h2>
-          </div>
-          <a class="card__cta" href="pages/resources/">See the full planning kit →</a>
-        </div>
-        <div class="signal-strip reveal" data-field-signals></div>
-      </div>
-    </section>
-
-    <!-- Mission / pillars -->
-    <section class="section">
-      <div class="container">
-        <div class="mission-grid">
-          <div class="stack stack--lg reveal">
-            <span class="eyebrow">Who we are</span>
-            <h2>Real trips, field-tested notes, and a rig that takes us there.</h2>
-            <p class="lede">
-              We explore nature, document the places we reach, and bring back
-              stories, photos, and practical travel notes for people who love the
-              outdoors, overlanding, and real adventure.
-            </p>
-            <p class="text-secondary">
-              Every trip is planned around the honest questions a traveler
-              actually asks — how do you get there, is it safe to park, what
-              will the weather do, and what's worth carrying in. Our writing is
-              the answer to those questions, shaped by the trail, not by a desk.
-            </p>
-            <p>
-              <a class="card__cta" href="pages/about/">Read our story
-                <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                  <path d="M5 12h14" /><path d="M13 5l7 7-7 7" />
-                </svg>
-              </a>
-            </p>
-          </div>
-          <aside class="mission-grid__aside reveal" data-pillars></aside>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats -->
-    <section class="section section--tight">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">By the numbers</span>
-          <h2 class="section-heading__title">What's on the atlas.</h2>
-          <p class="section-heading__lede">
-            Coverage is modest by design. We'd rather write well about a place
-            once than hype it three times.
+        <div class="container hero__content">
+          <span class="hero__eyebrow">Field journal · est. 2026</span>
+          <h1 class="hero__title">The road is calling.</h1>
+          <p class="hero__sub">
+            From volcanic ridgelines and rushing rivers to deep forests, high-desert trails, and the
+            wild edges of national parks — Open Atlas is built to share the journey and the work
+            that makes it possible.
           </p>
-        </div>
-        <div class="stats-grid reveal" data-stats></div>
-      </div>
-    </section>
-
-    <!-- Spotlight: Fuel the Adventure -->
-    <section class="section section--tight">
-      <div class="container">
-        <div class="spotlight reveal">
-          <img src="assets/images/hero/fuel-the-adventure.jpg" alt="Sunset over a forest road — the kind of light that starts a trip." />
-          <div class="spotlight__content">
-            <span class="eyebrow">Support the work</span>
-            <h2 class="spotlight__title">Fuel the adventure.</h2>
-            <p class="spotlight__sub">
-              Every contribution helps us go farther, build better, and create
-              more content from the field.
-            </p>
-            <a class="btn" href="pages/fuel-the-adventure/">
-              See how it works
-              <svg class="btn__arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                <path d="M5 12h14" /><path d="M13 5l7 7-7 7" />
+          <div class="hero__actions">
+            <a class="btn btn--lg" href="pages/explore/">
+              Start exploring
+              <svg
+                class="btn__arrow"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+              >
+                <path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path>
               </svg>
             </a>
+            <a class="btn btn--ghost btn--lg" href="pages/fuel-the-adventure/">Fuel the adventure</a
+            >
+          </div>
+          <dl class="home-hero__meta">
+            <div><dt>Home base</dt><dd>Pacific Northwest</dd></div>
+            <div><dt>Rig</dt><dd>Toyota FJ13</dd></div>
+            <div><dt>Focus</dt><dd>Overlanding · Hiking · Caving</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- Field signals strip -->
+      <section class="section section--tight">
+        <div class="container">
+          <div
+            class="section-heading reveal"
+            style="display:flex; align-items:baseline; justify-content:space-between; flex-wrap:wrap; gap:var(--sp-2); max-width:none;"
+          >
+            <div>
+              <span class="eyebrow">Trip-day check</span>
+              <h2 class="section-heading__title" style="margin-top:0;">
+                Before the engine turns over.
+              </h2>
+            </div>
+            <a class="card__cta" href="pages/resources/">See the full planning kit →</a>
+          </div>
+          <div class="signal-strip reveal" data-field-signals></div>
+        </div>
+      </section>
+
+      <!-- Mission / pillars -->
+      <section class="section">
+        <div class="container">
+          <div class="mission-grid">
+            <div class="stack stack--lg reveal">
+              <span class="eyebrow">Who we are</span>
+              <h2>Real trips, field-tested notes, and a rig that takes us there.</h2>
+              <p class="lede">
+                We explore nature, document the places we reach, and bring back stories, photos, and
+                practical travel notes for people who love the outdoors, overlanding, and real
+                adventure.
+              </p>
+              <p class="text-secondary">
+                Every trip is planned around the honest questions a traveler actually asks — how do
+                you get there, is it safe to park, what will the weather do, and what's worth
+                carrying in. Our writing is the answer to those questions, shaped by the trail, not
+                by a desk.
+              </p>
+              <p>
+                <a class="card__cta" href="pages/about/"
+                  >Read our story
+                  <svg
+                    class="btn__arrow"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  >
+                    <path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path>
+                  </svg>
+                </a>
+              </p>
+            </div>
+            <aside class="mission-grid__aside reveal" data-pillars></aside>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Latest posts -->
-    <section class="section">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Our latest destinations</span>
-          <h2 class="section-heading__title">Fresh field notes.</h2>
-          <p class="section-heading__lede">
-            Recent adventures, reviews, and travel notes from the trail.
-          </p>
-        </div>
-        <div class="card-grid" data-latest-posts></div>
-        <div class="center" style="margin-top: var(--sp-5);">
-          <a class="btn btn--ghost" href="pages/explore/">See all journal entries</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Region rail -->
-    <section class="section section--tight">
-      <div class="container">
-        <div class="section-heading reveal">
-          <span class="eyebrow">Where we're headed</span>
-          <h2 class="section-heading__title">Four states on the atlas.</h2>
-          <p class="section-heading__lede">
-            Each region is added only after we've put time in on the ground.
-            Pick a state to jump into the directory.
-          </p>
-        </div>
-        <div class="region-rail reveal" data-region-rail></div>
-      </div>
-    </section>
-
-    <!-- Trail ethics -->
-    <section class="section section--tight">
-      <div class="container">
-        <div class="ethics reveal">
-          <div>
-            <span class="eyebrow">Trail ethics</span>
-            <h2 style="font-size: var(--fs-3xl); margin-top: var(--sp-1);">Pack it in. Pack it out. Leave it better than you found it.</h2>
-            <p class="text-secondary">
-              Open Atlas operates almost entirely on public land. Every post,
-              every trail, every forest road we share is a place that exists
-              because someone — a ranger, a volunteer, a taxpayer — is
-              protecting it. The seven Leave No Trace principles aren't a
-              checklist for us. They're the price of admission.
+      <!-- Stats -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow">By the numbers</span>
+            <h2 class="section-heading__title">What's on the atlas.</h2>
+            <p class="section-heading__lede">
+              Coverage is modest by design. We'd rather write well about a place once than hype it
+              three times.
             </p>
-            <p>
-              <a class="card__cta" href="pages/resources/#ethics">
-                Read the seven principles →
+          </div>
+          <div class="stats-grid reveal" data-stats></div>
+        </div>
+      </section>
+
+      <!-- Spotlight: Fuel the Adventure -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="spotlight reveal">
+            <img
+              src="assets/images/hero/fuel-the-adventure.jpg"
+              alt="Sunset over a forest road — the kind of light that starts a trip."
+            />
+            <div class="spotlight__content">
+              <span class="eyebrow">Support the work</span>
+              <h2 class="spotlight__title">Fuel the adventure.</h2>
+              <p class="spotlight__sub">
+                Every contribution helps us go farther, build better, and create more content from
+                the field.
+              </p>
+              <a class="btn" href="pages/fuel-the-adventure/">
+                See how it works
+                <svg
+                  class="btn__arrow"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                >
+                  <path d="M5 12h14"></path><path d="M13 5l7 7-7 7"></path>
+                </svg>
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Latest posts -->
+      <section class="section">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Our latest destinations</span>
+            <h2 class="section-heading__title">Fresh field notes.</h2>
+            <p class="section-heading__lede">
+              Recent adventures, reviews, and travel notes from the trail.
             </p>
           </div>
-          <ul class="ethics-list">
-            <li><strong>01 ·</strong> Plan ahead and prepare.</li>
-            <li><strong>02 ·</strong> Travel and camp on durable surfaces.</li>
-            <li><strong>03 ·</strong> Dispose of waste properly.</li>
-            <li><strong>04 ·</strong> Leave what you find.</li>
-            <li><strong>05 ·</strong> Minimize campfire impacts.</li>
-            <li><strong>06 ·</strong> Respect wildlife.</li>
-            <li><strong>07 ·</strong> Be considerate of other visitors.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- Closing CTA -->
-    <section class="section section--tight">
-      <div class="container">
-        <div class="callout reveal" style="text-align:center;">
-          <p class="quote-block" style="margin:0;">
-            Help us keep rolling. Help us keep exploring. Help us fuel the adventure.
-          </p>
-          <div class="row" style="justify-content:center; margin-top: var(--sp-3);">
-            <a class="btn" href="pages/fuel-the-adventure/">Fuel the adventure</a>
-            <a class="btn btn--ghost" href="pages/contact/">Say hello</a>
+          <div class="card-grid" data-latest-posts></div>
+          <div class="center" style="margin-top: var(--sp-5);">
+            <a class="btn btn--ghost" href="pages/explore/">See all journal entries</a>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
 
-  <div data-site-footer></div>
-  <script type="module" src="assets/js/main.js"></script>
-</body>
+      <!-- Region rail -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="section-heading reveal">
+            <span class="eyebrow">Where we're headed</span>
+            <h2 class="section-heading__title">Four states on the atlas.</h2>
+            <p class="section-heading__lede">
+              Each region is added only after we've put time in on the ground. Pick a state to jump
+              into the directory.
+            </p>
+          </div>
+          <div class="region-rail reveal" data-region-rail></div>
+        </div>
+      </section>
+
+      <!-- Trail ethics -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="ethics reveal">
+            <div>
+              <span class="eyebrow">Trail ethics</span>
+              <h2 style="font-size: var(--fs-3xl); margin-top: var(--sp-1);">
+                Pack it in. Pack it out. Leave it better than you found it.
+              </h2>
+              <p class="text-secondary">
+                Open Atlas operates almost entirely on public land. Every post, every trail, every
+                forest road we share is a place that exists because someone — a ranger, a volunteer,
+                a taxpayer — is protecting it. The seven Leave No Trace principles aren't a
+                checklist for us. They're the price of admission.
+              </p>
+              <p>
+                <a class="card__cta" href="pages/resources/#ethics">
+                  Read the seven principles →
+                </a>
+              </p>
+            </div>
+            <ul class="ethics-list">
+              <li><strong>01 ·</strong> Plan ahead and prepare.</li>
+              <li><strong>02 ·</strong> Travel and camp on durable surfaces.</li>
+              <li><strong>03 ·</strong> Dispose of waste properly.</li>
+              <li><strong>04 ·</strong> Leave what you find.</li>
+              <li><strong>05 ·</strong> Minimize campfire impacts.</li>
+              <li><strong>06 ·</strong> Respect wildlife.</li>
+              <li><strong>07 ·</strong> Be considerate of other visitors.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Closing CTA -->
+      <section class="section section--tight">
+        <div class="container">
+          <div class="callout reveal" style="text-align:center;">
+            <p class="quote-block" style="margin:0;">
+              Help us keep rolling. Help us keep exploring. Help us fuel the adventure.
+            </p>
+            <div class="row" style="justify-content:center; margin-top: var(--sp-3);">
+              <a class="btn" href="pages/fuel-the-adventure/">Fuel the adventure</a>
+              <a class="btn btn--ghost" href="pages/contact/">Say hello</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div data-site-footer></div>
+    <script type="module" src="assets/js/main.js"></script>
+  </body>
 </html>

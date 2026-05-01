@@ -1,6 +1,6 @@
 // Open Atlas – shared site chrome (header, footer, mobile nav) and utilities. Imported by every page via main.js.
 
-import { site } from "../data/site.js";
+import { site } from "/data/site.js";
 
 /**
  * Public path prefix when the site is hosted under a subpath (e.g. GitHub Project Pages).
