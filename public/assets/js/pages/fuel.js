@@ -22,22 +22,22 @@ export function init() {
 
   const travelPhotos = [
     {
-      src: "/assets/images/travel/coffee-briggs.jpg",
+      src: "/assets/images/travel/yeti-10oz-mug-briggs.jpg",
       alt: "Coffee setup at Briggs.",
       caption: "Coffee at Briggs",
     },
     {
-      src: "/assets/images/travel/emerald-lake.jpg",
+      src: "/assets/images/travel/emerald-lake-lvnp.jpg",
       alt: "Emerald Lake at sunrise.",
       caption: "Emerald Lake",
     },
     {
-      src: "/assets/images/travel/mt-hood-nf.jpg",
+      src: "/assets/images/travel/mt-hood-national-forest.jpg",
       alt: "Mount Hood National Forest.",
       caption: "Mt. Hood NF",
     },
     {
-      src: "/assets/images/travel/lake-helen.jpg",
+      src: "/assets/images/travel/lake-helen-lvnp.jpg",
       alt: "Lake Helen basin.",
       caption: "Lake Helen",
     },
@@ -45,22 +45,22 @@ export function init() {
 
   const supportPhotos = [
     {
-      src: "/assets/images/travel/support-hug-point.jpg",
+      src: "/assets/images/travel/hug-point-oregon.jpg",
       alt: "Hug Point arch on the Oregon coast.",
       caption: "Hug Point",
     },
     {
-      src: "/assets/images/travel/support-lake-tahoe.jpg",
+      src: "/assets/images/travel/ENO-onelink-lake-tahoe.jpg",
       alt: "Overlook at Lake Tahoe.",
       caption: "Lake Tahoe",
     },
     {
-      src: "/assets/images/travel/support-lava-tube.jpg",
+      src: "/assets/images/travel/valentine-cave-lava-tube.jpg",
       alt: "Skylight inside a lava tube.",
       caption: "Lava Tube",
     },
     {
-      src: "/assets/images/travel/support-cape-meares.jpg",
+      src: "/assets/images/travel/cape-meares-lighthouse-oregon.jpg",
       alt: "Cape Meares lighthouse view.",
       caption: "Cape Meares",
     },
