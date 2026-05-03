@@ -146,6 +146,22 @@ export const gearCategories: GearCategory[] = [
       },
       {
         brand: "Garmin",
+        name: "Suction Cup Mount for Montana 710i Handheld GPS",
+        image: "/assets/images/gear/garmin-montana.svg",
+        imageAlt: "Illustration of a rugged handheld GPS device.",
+        blurb:
+          "This handheld GPS gives us the best of both worlds. A large touch display improves trail planning and tracking accuracy, and with the suction mount it doubles as a basic automotive navigator.",
+        details: [
+          "inReach two-way satellite messaging + SOS.",
+          "Preloaded TopoActive maps; expandable via microSD.",
+          "Mounts to the FJ13's windshield with the suction kit.",
+        ],
+        links: [
+          { label: "Suction Cup Mount (affiliate)", href: "https://amzn.to/48ivTwP" },
+        ],
+      },
+      {
+        brand: "Garmin",
         name: "Instinct Esports Edition GPS Smartwatch",
         image: "/assets/images/gear/garmin-instinct.svg",
         imageAlt: "Illustration of a rugged GPS smartwatch on a trail face.",

@@ -1,8 +1,10 @@
 # Open Atlas — site
 
 Rebuild of [openatlas.wiki](https://openatlas.wiki/).
-Built as an Astro site with route files in `src/pages/pages/` and static assets/content data in `public/`.
+Built as an Astro site with route files in `src/pages/pages/` and static assets in `public/`.
 There is no React/Vue/Svelte UI framework — pages are authored as HTML-first Astro route files plus browser ES modules.
+
+**Data source of truth:** All site content data lives in `src/data/*.ts` (TypeScript). Browser-compatible JavaScript files in `public/data/` are auto-generated during build — never edit those directly.
 
 ## Run locally
 
@@ -31,12 +33,12 @@ npm run preview
 │   ├── robots.txt
 │   ├── sitemap.xml
 │   ├── CNAME                        GitHub Pages custom domain (openatlas.wiki)
+│   ├── data/                        AUTO-GENERATED — do not edit
+│   │   └── *.js                     built from src/data/*.ts at build time
 │   └── assets/
 │       ├── css/                     tokens, base, components, pages
 │       ├── js/                      site chrome, components, page inits
 │       │   └── pages/               one init module per page
-│       ├── data/                    site.js, posts.js, destinations.js,
-│       │                            gear.js, fj13.js, resources.js
 │       ├── images/
 │       │   ├── hero/                full-bleed hero photography
 │       │   ├── posts/               journal thumbnails and inline shots
@@ -47,6 +49,14 @@ npm run preview
 │       │   └── meta/                favicon + social-card assets
 │       └── icons/                   reserved for shared inline SVGs
 └── src/
+    ├── data/                        SOURCE OF TRUTH for all site content
+    │   ├── site.ts                  brand, nav, footer, pillars, stats
+    │   ├── posts.ts                 journal entries
+    │   ├── destinations.ts          PNW directory
+    │   ├── gear.ts                  gear catalog
+    │   ├── library.ts               library catalog
+    │   ├── fj13.ts                  FJ13 rig profile
+    │   └── resources.ts             trip-planning resources
     ├── env.d.ts
     └── pages/                       Astro-native route files
         ├── index.astro              /
@@ -58,7 +68,7 @@ npm run preview
 
 - Every page loads the same four stylesheets and boots `public/assets/js/main.js` via a path relative to that HTML file.
 
-- `main.js` renders the shared **header** and **footer** into `<div data-site-header></div>` and `<div data-site-footer></div>` slots, so you only define the chrome in one place (`public/assets/data/site.js` + `public/assets/js/site.js`). If the site is ever served under a URL prefix, that prefix is derived automatically using `import.meta.url`.
+- `main.js` renders the shared **header** and **footer** into `<div data-site-header></div>` and `<div data-site-footer></div>` slots, so you only define the chrome in one place (`src/data/site.ts` + `public/assets/js/site.js`). If the site is ever served under a URL prefix, that prefix is derived automatically using `import.meta.url`.
 
 - If a page sets `<body data-page="home">`, `main.js` dynamically imports `public/assets/js/pages/pages/home.js` and calls its `init()` function.
 
@@ -68,7 +78,7 @@ npm run preview
 
 ### Nav, brand, footer, tagline
 
-Edit `public/assets/data/site.js`.
+Edit `src/data/site.ts`.
 
 ### Add a journal entry
 
@@ -77,9 +87,9 @@ Edit `public/assets/data/site.js`.
 2. Create your new route as `src/pages/pages/journal/new-trip.astro`.
 3. Update the `<title>`, meta description, breadcrumbs, and body content.
 4. Set `data-slug="new-trip"` on `<body>` (drives the "more posts" list).
-5. Open `public/assets/data/posts.js` and prepend a new entry:
+5. Open `src/data/posts.ts` and prepend a new entry:
 
-   ```js
+   ```ts
    {
      slug: "new-trip",
      title: "Your title",
@@ -102,14 +112,14 @@ and in the "more posts" row of every existing journal entry.
 
 ### Add a PNW destination
 
-Open `public/assets/data/destinations.js` and push an entry under the right state.
+Open `src/data/destinations.ts` and push an entry under the right state.
 Supported fields: `name`, `region`, `difficulty`, `managedBy`, `note`,
 `planned` (boolean for "future trip" badge), and `post: "<slug>"` to
 auto-link the destination name to a journal entry.
 
 ### Add a gear item
 
-Open `public/assets/data/gear.js` and push into the right category's `items` array.
+Open `src/data/gear.ts` and push into the right category's `items` array.
 Each item supports `brand`, `name`, `image`, `imageAlt`, `blurb`, a
 `details` array (rendered as bullet points), optional `review: "<slug>"`
 (adds a "Read the review" button), and one or more `links`.
@@ -122,7 +132,7 @@ illustrations read cleanly without cropping.
 
 ### Add new reference materials (Library)
 
-Open `public/assets/data/library.js` and push into the right category's `items` array.
+Open `src/data/library.ts` and push into the right category's `items` array.
 Each item supports:
 
 | Field | Description |
@@ -171,18 +181,18 @@ Each item supports:
 
 ### Update FJ13
 
-Everything — specs, gallery, and upgrades — is in `public/assets/data/fj13.js`.
+Everything — specs, gallery, and upgrades — is in `src/data/fj13.ts`.
 
 ### Trip-planning resources
 
-`public/assets/data/resources.js` exports two arrays: `planningKit` (grouped
+`src/data/resources.ts` exports two arrays: `planningKit` (grouped
 planning cards with `title`, `lede`, `items`) and `fieldSignals` (the
 Weather / Cell / Permits / Fire strip reused on Home and Resources). Add
 an entry to either to make it appear everywhere it's used.
 
 ### Pillars and stats
 
-`public/assets/data/site.js` also exports `pillars` (four editorial principles
+`src/data/site.ts` also exports `pillars` (four editorial principles
 rendered on Home and About) and `stats` (the "By the numbers" strip).
 Update the copy or reorder the array and both pages follow automatically.
 
@@ -197,6 +207,19 @@ All design tokens are in `public/assets/css/tokens.css`:
 - Type: `--font-display` (Fraunces), `--font-ui` (Manrope), `--font-mono` (Fira Code)
 - Spacing: `--sp-1` … `--sp-10` on an 8 px baseline
 - Radii, shadows, motion durations and easings
+
+## Data build pipeline
+
+All content data is authored as TypeScript in `src/data/*.ts`. Running `npm run build` automatically transpiles these files to browser-compatible JavaScript in `public/data/` via esbuild before the Astro build runs.
+
+```bash
+npm run build       # runs prebuild (data transpile) + astro build
+npm run build:data  # regenerate public/data/*.js only
+```
+
+After a fresh clone, `npm install` runs the data build automatically via `postinstall`.
+
+**Important:** Never edit `public/data/*.js` directly — those files are generated and will be overwritten on the next build.
 
 ## Deploy
 
