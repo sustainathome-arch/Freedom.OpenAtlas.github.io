@@ -44,9 +44,9 @@ export const gearCategories = [
         ],
         review: "yeti-rambler-26oz-review",
         links: [
-          { label: "30 oz Tumbler", href: "https://amzn.to/3QtNKe8" },
-          { label: "10 oz Mug", href: "https://amzn.to/4mQcPvH" },
-          { label: "26 oz Bottle", href: "https://amzn.to/4tydkNy" },
+          { label: "Buy Tumbler on Amazon", href: "https://amzn.to/3QtNKe8" },
+          { label: "Buy Mug on Amazon", href: "https://amzn.to/4mQcPvH" },
+          { label: "Buy Bottle on Amazon", href: "https://amzn.to/4tydkNy" },
         ],
       },
     ],
@@ -118,8 +118,23 @@ export const gearCategories = [
           "Mounts to the FJ13's windshield with the suction kit.",
         ],
         links: [
-          { label: "Montana 710i (affiliate)", href: "https://amzn.to/4mQdRrz" },
-          { label: "Suction Cup Mount (affiliate)", href: "https://amzn.to/48ivTwP" },
+          { label: "Buy Montana 710i on Amazon", href: "https://amzn.to/4mQdRrz" },
+        ],
+      },
+      {
+        brand: "Garmin",
+        name: "Suction Cup Mount for Montana 710i Handheld GPS",
+        image: "/assets/images/gear/garmin-montana.svg",
+        imageAlt: "Illustration of a rugged handheld GPS device.",
+        blurb:
+          "This handheld GPS gives us the best of both worlds. A large touch display improves trail planning and tracking accuracy, and with the suction mount it doubles as a basic automotive navigator.",
+        details: [
+          "inReach two-way satellite messaging + SOS.",
+          "Preloaded TopoActive maps; expandable via microSD.",
+          "Mounts to the FJ13's windshield with the suction kit.",
+        ],
+        links: [
+          { label: "Buy Suction Cup Mount on Amazon", href: "https://amzn.to/48ivTwP" },
         ],
       },
       {

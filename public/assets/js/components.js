@@ -69,7 +69,7 @@ export function renderGearItem(item, postLookup = {}) {
   const reviewUrl = item.review && postLookup[item.review]?.url;
   const links = (item.links ?? [])
     .map(
-      (l) => html`<a class="btn btn--ghost btn--sm" href="${esc(l.href)}" rel="nofollow sponsored">${esc(l.label)}</a>`
+      (l) => html`<a class="btn btn--ghost btn--sm" href="${esc(l.href)}" rel="nofollow sponsored">${l.label === "Affiliate link" ? "Buy on Amazon" : esc(l.label)}</a>`
     )
     .join("");
 
