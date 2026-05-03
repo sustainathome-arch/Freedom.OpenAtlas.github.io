@@ -17,7 +17,7 @@ const tags = ["gear", "site"];
   ogTitle={ogTitle}
   ogDescription={ogDescription}
   ogImage={ogImage}
-  bodyClass="our-gear"
+  bodyClass="gear"
 >
       <section class="hero hero--short">
         <div class="hero__media">
@@ -62,15 +62,18 @@ const tags = ["gear", "site"];
             </p>
           </div>
 
-          <nav
-            aria-label="Gear categories"
-            class="row"
-            style="gap: var(--sp-1); margin-bottom: var(--sp-4);"
-            data-gear-toc
+          <div
+            class="row reveal"
+            style="margin-bottom: var(--sp-4); justify-content: space-between; align-items: baseline;"
           >
-          </nav>
+            <div>
+              <span class="eyebrow">Gear</span>
+              <h2 style="margin-bottom: 0;">All gear</h2>
+            </div>
+            <div class="row" data-gear-tags></div>
+          </div>
 
-          <div data-gear></div>
+          <div class="card-grid" data-gear-items></div>
         </div>
       </section>
     </BaseLayout>

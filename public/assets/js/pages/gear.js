@@ -1,11 +1,11 @@
 import { gearCategories } from "/data/gear.js";
 import { posts } from "/data/posts.js";
 import { renderGearItem, postLookup } from "../components.js";
-import { esc, html } from "../site.js";
+import { esc, html, withBase } from "../site.js";
 import { initReveal } from "../motion.js";
 
 /**
- * Sort items within a category by field and direction.
+ * Sort items by field and direction.
  */
 function sortItems(items, field, direction) {
   const sorted = [...items].sort((a, b) => {
@@ -19,127 +19,125 @@ function sortItems(items, field, direction) {
 }
 
 /**
- * Sort categories by title.
+ * Flatten all gear items from categories and add category info.
  */
-function sortCategories(categories, direction) {
-  const sorted = [...categories].sort((a, b) => {
-    const aVal = (a.title ?? "").toLowerCase();
-    const bVal = (b.title ?? "").toLowerCase();
-    if (aVal < bVal) return -1;
-    if (aVal > bVal) return 1;
-    return 0;
-  });
-  return direction === "desc" ? sorted.reverse() : sorted;
+function flattenGearItems(categories) {
+  return categories.flatMap((cat) =>
+    cat.items.map((item) => ({
+      ...item,
+      category: cat.id,
+      categoryTitle: cat.title,
+    }))
+  );
 }
 
 /**
- * Render the sort controls.
+ * Get all unique categories.
  */
-function renderSortControls(currentSort, currentDir) {
-  return html`
-    <div class="row" data-gear-sort style="gap: var(--sp-2); align-items: center; margin-bottom: var(--sp-4);">
-      <span style="font-size: var(--fs-sm); color: var(--text-secondary);">Sort by:</span>
-      <select class="btn" data-gear-sort-field style="width: auto;">
-        <option value="category" ${currentSort === "category" ? "selected" : ""}>Category</option>
-        <option value="name" ${currentSort === "name" ? "selected" : ""}>Alphabetically</option>
-        <option value="brand" ${currentSort === "brand" ? "selected" : ""}>Brand</option>
-      </select>
-      <button class="btn btn--ghost btn--sm" data-gear-sort-dir aria-label="Toggle sort direction">
-        ${currentDir === "asc" ? "↑ Asc" : "↓ Desc"}
-      </button>
-    </div>
-  `;
+function getAllCategories(categories) {
+  return categories.map((cat) => ({
+    id: cat.id,
+    title: cat.title,
+  }));
 }
 
 export function init() {
-  const slot = document.querySelector("[data-gear]");
-  const toc = document.querySelector("[data-gear-toc]");
-  const container = slot?.closest(".container");
-  if (!slot) return;
+  const itemsContainer = document.querySelector("[data-gear-items]");
+  const tagsContainer = document.querySelector("[data-gear-tags]");
+  const container = itemsContainer?.closest(".container");
+  
+  if (!itemsContainer) return;
 
   const lookup = postLookup(posts);
+  const allItems = flattenGearItems(gearCategories);
+  const allCategories = getAllCategories(gearCategories);
+
+  // Get URL params for filtering
+  const urlParams = new URL(window.location.href).searchParams;
+  const selectedCategory = urlParams.get("category");
 
   // Default sort
-  let currentSort = "category";
+  let currentSort = "name";
   let currentDir = "asc";
+  let filteredItems = allItems;
 
-  function render(sortedCategories) {
-    // Only add sort controls if they don't exist yet
+  // Apply category filter if selected
+  if (selectedCategory) {
+    filteredItems = allItems.filter((item) => item.category === selectedCategory);
+  }
+
+  function renderCategoryTags() {
+    if (!tagsContainer) return;
+    
+    tagsContainer.innerHTML = [
+      `<a class="btn btn--ghost btn--sm${!selectedCategory ? " is-active" : ""}" href="${withBase("/pages/our-gear/")}">All</a>`,
+      ...allCategories.map(
+        (cat) =>
+          `<a class="btn btn--ghost btn--sm${
+            selectedCategory === cat.id ? " is-active" : ""
+          }" href="${withBase("/pages/our-gear/")}?category=${encodeURIComponent(cat.id)}">${esc(cat.title)}</a>`
+      ),
+    ].join("");
+  }
+
+  function renderSortControls() {
+    return html`
+      <div class="row" data-gear-sort style="gap: var(--sp-2); align-items: center;">
+        <span style="font-size: var(--fs-sm); color: var(--text-secondary);">Sort by:</span>
+        <select class="btn" data-gear-sort-field style="width: auto;">
+          <option value="name" ${currentSort === "name" ? "selected" : ""}>Name</option>
+          <option value="brand" ${currentSort === "brand" ? "selected" : ""}>Brand</option>
+          <option value="category" ${currentSort === "category" ? "selected" : ""}>Category</option>
+        </select>
+        <button class="btn btn--ghost btn--sm" data-gear-sort-dir aria-label="Toggle sort direction">
+          ${currentDir === "asc" ? "↑ Asc" : "↓ Desc"}
+        </button>
+      </div>
+    `;
+  }
+
+  function render(items) {
+    // Add sort controls if they don't exist
     const existingSort = container?.querySelector("[data-gear-sort]");
-    if (!existingSort) {
-      const tocEl = container?.querySelector("[data-gear-toc]");
-      if (tocEl) {
-        tocEl.insertAdjacentHTML("beforebegin", renderSortControls(currentSort, currentDir));
-      }
+    if (!existingSort && tagsContainer) {
+      tagsContainer.insertAdjacentHTML("afterend", renderSortControls());
     }
 
-    // Render categories with sorted items
-    slot.innerHTML = sortedCategories
-      .map((cat) => {
-        const body =
-          cat.items.length === 0
-            ? html`<p class="text-muted"><em>Stay tuned. More awesome gear coming soon.</em></p>`
-            : html`<div class="stack stack--lg">${cat.items
-                .map((i) => renderGearItem(i, lookup))
-                .join("")}</div>`;
-        return html`
-          <section class="gear-section reveal" id="${esc(cat.id)}">
-            <div class="gear-section__head">
-              <h2 class="gear-section__title">${esc(cat.title)}</h2>
-              <span class="gear-section__tag">${esc(cat.tag ?? "")}</span>
-            </div>
-            ${body}
-          </section>
-        `;
-      })
-      .join("");
-
-    // Update TOC
-    if (toc) {
-      toc.innerHTML = sortedCategories
-        .map(
-          (c) =>
-            html`<a class="btn btn--ghost btn--sm" href="#${esc(c.id)}">${esc(c.title)}</a>`
-        )
-        .join("");
+    // Render gear items in a vertical stack like library page
+    if (items.length === 0) {
+      itemsContainer.innerHTML = `<p class="text-muted"><em>No gear found in this category.</em></p>`;
+    } else {
+      itemsContainer.innerHTML = `<div class="stack stack--lg">${items
+        .map((item) => renderGearItem(item, lookup))
+        .join("")}</div>`;
     }
 
     initReveal();
   }
 
   // Initial render
-  let sortedCategories = currentSort === "category"
-    ? sortCategories(gearCategories, currentDir)
-    : gearCategories.map((cat) => ({
-        ...cat,
-        items: sortItems(cat.items, currentSort, currentDir),
-      }));
-  render(sortedCategories);
+  renderCategoryTags();
+  const sortedItems = sortItems(filteredItems, currentSort, currentDir);
+  render(sortedItems);
 
   // Handle sort changes
   container?.addEventListener("change", (e) => {
     if (e.target.matches("[data-gear-sort-field]")) {
       currentSort = e.target.value;
-      sortedCategories = currentSort === "category"
-        ? sortCategories(gearCategories, currentDir)
-        : gearCategories.map((cat) => ({
-            ...cat,
-            items: sortItems(cat.items, currentSort, currentDir),
-          }));
-      render(sortedCategories);
+      const sortedItems = sortItems(filteredItems, currentSort, currentDir);
+      render(sortedItems);
     }
   });
 
+  // Handle sort direction changes
   container?.addEventListener("click", (e) => {
     if (e.target.matches("[data-gear-sort-dir]")) {
       currentDir = currentDir === "asc" ? "desc" : "asc";
-      sortedCategories = currentSort === "category"
-        ? sortCategories(gearCategories, currentDir)
-        : gearCategories.map((cat) => ({
-            ...cat,
-            items: sortItems(cat.items, currentSort, currentDir),
-          }));
-      render(sortedCategories);
+      const sortedItems = sortItems(filteredItems, currentSort, currentDir);
+      render(sortedItems);
+      
+      // Update button text
+      e.target.innerHTML = currentDir === "asc" ? "↑ Asc" : "↓ Desc";
     }
   });
 }
