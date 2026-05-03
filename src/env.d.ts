@@ -33,3 +33,15 @@ declare const fj13: {
   specs: import("./types/data").FJ13Spec[];
   upgrades: import("./types/data").FJ13Upgrade[];
 };
+
+// Google Tag Manager dataLayer
+declare global {
+  interface Window {
+    dataLayer: Array<Record<string, unknown> | unknown[]>;
+    gtag: (...args: unknown[]) => void;
+  }
+}
+declare const dataLayer: Array<Record<string, unknown> | unknown[]>;
+
+// Google Analytics gtag function
+declare const gtag: (...args: unknown[]) => void;
