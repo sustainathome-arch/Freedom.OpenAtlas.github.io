@@ -1,9 +1,4 @@
-// Library catalog, grouped by category. Each item can include an optional
-// `review` (slug of a journal post) and `links` for affiliate URLs. When
-// you add a new item, drop a photo into `/assets/images/library/` and
-// reference it by relative path.
-
-export const libraryCategories = [
+const libraryCategories = [
   {
     id: "reference",
     title: "Reference Materials",
@@ -30,11 +25,7 @@ export const libraryCategories = [
         image: "/assets/images/library/placeholder.svg",
         imageAlt: "Birds of Prey of the West field guide cover.",
         blurb: "Comprehensive guide to raptors of the American West.",
-        details: [
-          "200+ species illustrated",
-          "Quick ID comparisons",
-          "Range maps included"
-        ],
+        details: ["200+ species illustrated", "Quick ID comparisons", "Range maps included"],
         links: [{ label: "Buy on Amazon", href: "https://amzn.to/3P2pnnk" }]
       },
       {
@@ -44,11 +35,7 @@ export const libraryCategories = [
         image: "/assets/images/library/placeholder.svg",
         imageAlt: "Rocks and Minerals field guide cover.",
         blurb: "The essential guide to identifying rocks and minerals across North America.",
-        details: [
-          "Full color photographs",
-          "Comprehensive coverage",
-          "Portable format"
-        ],
+        details: ["Full color photographs", "Comprehensive coverage", "Portable format"],
         links: [{ label: "Buy on Amazon", href: "https://amzn.to/4sYRwK6" }]
       },
       {
@@ -58,11 +45,7 @@ export const libraryCategories = [
         image: "/assets/images/library/placeholder.svg",
         imageAlt: "Wildflowers field guide cover.",
         blurb: "Identify wildflowers from the Rockies to the Pacific.",
-        details: [
-          "800+ species covered",
-          "Blooming season charts",
-          "Habitat information"
-        ],
+        details: ["800+ species covered", "Blooming season charts", "Habitat information"],
         links: [{ label: "Buy on Amazon", href: "https://amzn.to/4ue480Z" }]
       },
       {
@@ -72,11 +55,7 @@ export const libraryCategories = [
         image: "/assets/images/library/placeholder.svg",
         imageAlt: "Mushrooms field guide cover.",
         blurb: "Identify mushrooms with this comprehensive field guide.",
-        details: [
-          "800+ species photographed",
-          "Edibility information",
-          "Collection tips"
-        ],
+        details: ["800+ species photographed", "Edibility information", "Collection tips"],
         links: [{ label: "Buy on Amazon", href: "https://amzn.to/4e47aA0" }]
       },
       {
@@ -86,11 +65,7 @@ export const libraryCategories = [
         image: "/assets/images/library/placeholder.svg",
         imageAlt: "Trees field guide cover.",
         blurb: "The definitive guide to identifying trees in the West.",
-        details: [
-          "700+ species covered",
-          "Leaf/ bark photos",
-          "Range maps"
-        ],
+        details: ["700+ species covered", "Leaf/ bark photos", "Range maps"],
         links: [{ label: "Buy on Amazon", href: "https://amzn.to/48pZi8q" }]
       },
       {
@@ -100,11 +75,7 @@ export const libraryCategories = [
         image: "/assets/images/library/placeholder.svg",
         imageAlt: "In Search of Ancient Oregon book cover.",
         blurb: "Explore Oregon's fascinating geological history.",
-        details: [
-          "Geological formations explained",
-          "Full color photos",
-          "Road trip format"
-        ],
+        details: ["Geological formations explained", "Full color photos", "Road trip format"],
         links: [{ label: "Buy on Amazon", href: "https://amzn.to/48nnB6Z" }]
       },
       {
@@ -114,11 +85,7 @@ export const libraryCategories = [
         image: "/assets/images/library/placeholder.svg",
         imageAlt: "Waterfall Lover's Guide cover.",
         blurb: "Discover the hidden waterfalls of the Pacific Northwest.",
-        details: [
-          "200+ waterfalls listed",
-          "Driving directions",
-          "Difficulty ratings"
-        ],
+        details: ["200+ waterfalls listed", "Driving directions", "Difficulty ratings"],
         links: [{ label: "Buy on Amazon", href: "https://amzn.to/3QJkuA1" }]
       },
       {
@@ -128,13 +95,12 @@ export const libraryCategories = [
         image: "/assets/images/library/placeholder.svg",
         imageAlt: "National Geographic Birds field guide cover.",
         blurb: "The most comprehensive bird field guide available.",
-        details: [
-          "1000+ species covered",
-          "Latest taxonomy",
-          "Accurate range maps"
-        ],
+        details: ["1000+ species covered", "Latest taxonomy", "Accurate range maps"],
         links: [{ label: "Buy on Amazon", href: "https://amzn.to/4eEQZcz" }]
-      },
-    ],
-  },
+      }
+    ]
+  }
 ];
+export {
+  libraryCategories
+};
