@@ -53,6 +53,12 @@ Complete all required fields in the Front Matter panel:
 #### Optional Fields
 - **Author**: Defaults to "freedomland" (change if needed)
 
+#### ⚠️ Important: Field Validation
+**Only use the fields listed above.** Adding extra fields will cause build errors because your site has a strict content schema. Do NOT add fields like:
+- `description` (use `excerpt` instead)
+- `preview` (use `image` instead)
+- Any other custom fields
+
 ### Step 4: Write Your Article Content
 1. After filling metadata, click **"Save & Open"**
 2. Write your article in Markdown format below the frontmatter
@@ -81,16 +87,96 @@ Complete all required fields in the Front Matter panel:
 4. Review how it looks and make adjustments
 
 ### Step 6: Publish Your Article
-1. Commit your changes to git:
+1. **Test your build first**:
+   ```bash
+   npm run build
+   ```
+   If the build succeeds, you're ready to publish!
+
+2. Commit your changes to git:
    ```bash
    git add src/content/journal/your-article.md
    git commit -m "Add new journal entry: Your Article Title"
    ```
-2. Build and deploy:
+3. Build and deploy:
    ```bash
    npm run build
    ```
-3. Deploy the `dist/` folder to your hosting provider
+4. Deploy the `dist/` folder to your hosting provider
+
+---
+
+## ⚠️ Troubleshooting Common Issues
+
+### Build Errors: Invalid Content Entry Data
+
+**Error**: `data does not match collection schema`
+
+**Causes & Solutions**:
+
+1. **Extra Fields in Frontmatter**
+   - **Problem**: Added fields like `description`, `preview`, etc.
+   - **Solution**: Remove any fields not listed in the required section above
+   - **Prevention**: Only use fields available in the Front Matter panel
+
+2. **Malformed YAML**
+   - **Problem**: Line breaks, indentation, or quoting issues
+   - **Solution**: Check YAML formatting (see best practices below)
+   - **Prevention**: Let Front Matter handle formatting when possible
+
+3. **Date Format Issues**
+   - **Problem**: Date not recognized as valid date string
+   - **Solution**: Use YYYY-MM-DD format, quote it: `date: "2026-04-16"`
+   - **Prevention**: Use Front Matter's date picker or the default `{{now}}`
+
+### YAML Formatting Best Practices
+
+**Always Do**:
+- Use proper indentation (2 spaces for nested items)
+- Quote dates and complex strings: `date: "2026-04-16"`
+- Keep each field on its own line
+- Use consistent spacing around colons: `field: value`
+
+**Never Do**:
+- Add fields not in the schema
+- Let lines wrap without proper breaks
+- Mix tabs and spaces for indentation
+- Use special characters without quotes
+
+**Example of Correct Frontmatter**:
+```yaml
+---
+slug: my-article-title
+title: "My Amazing Adventure"
+excerpt: "A short description of my adventure"
+category: Field Notes
+tags:
+  - Hiking
+  - Oregon
+  - Summer
+author: freedomland
+date: "2026-04-16"
+image: /assets/images/my-photo.jpg
+imageAlt: Description of the image
+readMinutes: 5
+---
+```
+
+### Images Not Loading
+
+**Check**:
+- Image paths start with `/assets/images/`
+- Files exist in `public/assets/images/`
+- Alt text is provided
+- Build completes without errors
+
+### Article Not Appearing
+
+**Check**:
+- Run `npm run build` to sync content
+- Verify file is in `src/content/journal/`
+- Check that slug is unique
+- Ensure date is in correct format
 
 ---
 

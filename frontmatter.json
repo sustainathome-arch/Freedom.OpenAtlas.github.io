@@ -4,6 +4,7 @@
   "frontMatter.content.publicFolder": "public",
   "frontMatter.content.mediaFolder": "assets/images",
   "frontMatter.content.pages": "src/content/journal",
+  "frontMatter.content.validate": true,
   "frontMatter.content.pageFolders": [
     {
       "title": "Home",
@@ -121,58 +122,68 @@
           "title": "Slug",
           "name": "slug",
           "type": "string",
-          "single": true
+          "single": true,
+          "description": "URL-friendly identifier (lowercase, hyphens only)"
         },
         {
           "title": "Title",
           "name": "title",
           "type": "string",
-          "single": true
+          "single": true,
+          "description": "Full article title as it appears on the page"
         },
         {
           "title": "Excerpt",
           "name": "excerpt",
-          "type": "string"
+          "type": "string",
+          "description": "Short description (150-200 characters) for previews and SEO"
         },
         {
           "title": "Category",
           "name": "category",
           "type": "choice",
-          "choices": ["Destination", "Field Notes", "Gear Review"]
+          "choices": ["Destination", "Field Notes", "Gear Review"],
+          "description": "Content type for categorization"
         },
         {
           "title": "Tags",
           "name": "tags",
-          "type": "tags"
+          "type": "tags",
+          "description": "Keywords for content discovery (comma-separated)"
         },
         {
           "title": "Author",
           "name": "author",
           "type": "string",
-          "default": "freedomland"
+          "default": "freedomland",
+          "description": "Article author (leave default unless different)"
         },
         {
           "title": "Publishing date",
           "name": "date",
           "type": "datetime",
           "default": "{{now}}",
-          "isPublishDate": true
+          "isPublishDate": true,
+          "description": "Publication date (YYYY-MM-DD format)"
         },
         {
           "title": "Hero Image",
           "name": "image",
           "type": "image",
-          "isPreviewImage": true
+          "isPreviewImage": true,
+          "description": "Main article image (path: /assets/images/...)"
         },
         {
           "title": "Image Alt Text",
           "name": "imageAlt",
-          "type": "string"
+          "type": "string",
+          "description": "Accessibility description for the hero image"
         },
         {
           "title": "Read Time (minutes)",
           "name": "readMinutes",
-          "type": "number"
+          "type": "number",
+          "description": "Estimated reading time in minutes"
         }
       ]
     },
