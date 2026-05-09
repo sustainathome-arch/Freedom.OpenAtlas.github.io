@@ -404,7 +404,7 @@
   font-size: var(--fs-lg);
   color: var(--text-primary);
   line-height: var(--lh-relaxed);
-  max-width: 44rem;
+  max-width: 58rem;
   margin-inline: auto;
 }
 
